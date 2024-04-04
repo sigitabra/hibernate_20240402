@@ -15,8 +15,10 @@ public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(name = "pavadinimas")
     private String title;
+
     @OneToMany(mappedBy = "project", cascade = CascadeType.ALL)
     private List<Employee> employeesByProject = new ArrayList<>();
 }

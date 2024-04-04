@@ -17,20 +17,28 @@ public class Employee {
     @Id
     @Column(name = "asmenskodas")
     private String asmenskodas;
+
     @Column(name = "vardas")
     private String name;
+
     @Column(name = "pavarde")
     private String surname;
+
     @Column(name = "dirbanuo")
     private Date startDate;
+
     @Column(name = "gimimometai")
     private Date birthDate;
+
     @Column(name = "pareigos")
     private String jobTitle;
+
     @OneToMany(mappedBy = "manager", cascade = CascadeType.ALL)
-    private List<Department> departments = new ArrayList<>();
+    private List<Department> managedDepartments = new ArrayList<>();
+
     @ManyToOne(cascade = CascadeType.ALL)
     private Project project;
+
     @ManyToOne(cascade = CascadeType.ALL)
     private Department department;
 
