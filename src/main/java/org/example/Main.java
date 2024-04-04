@@ -32,10 +32,7 @@ public class Main {
                     e.printStackTrace();
                 }
             }
-
-
         }
-
     }
 
     private static List<Employee> generateTestEmployees(int count) {
@@ -101,7 +98,7 @@ public class Main {
 
         for (Department d : departments) {
             Employee employee = employees.get(new Random().nextInt(employees.size() - 1));
-            employee.getDepartments().add(d);
+            employee.getManagedDepartments().add(d);
             d.setManager(employee);
         }
     }
